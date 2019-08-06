@@ -1,13 +1,26 @@
-<h1><%= @task.title %></h1>
+<div class="container">
 
-<%= @task.completed %>
+<%= link_to tasks_path do %>
+<i class="fas fa-arrow-left"></i>
+<% end %>
+
+<h3><%= @task.title %></h3>
+
+<%= link_to edit_path(@task) do %>
+  <% if @task.completed %>
+    <p><i class="fas fa-check-square"></i> Completed</p>
+  <% else %>
+    <p><i class="fas fa-square"></i> Incomplete</i></p>
+  <% end %>
+<% end %>
 
 <p><%= @task.details %></p>
 
-<%= link_to "Edit task", edit_path(@task) %>
+<%= link_to edit_path(@task) do %>
+<p><i class="fas fa-edit"></i> Edit</p>
+<% end %>
 
-<%= link_to "All tasks", tasks_path %>
-
+</div>
 
 
 

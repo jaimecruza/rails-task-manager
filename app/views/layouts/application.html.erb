@@ -3,12 +3,18 @@
   <head>
     <title>RailsTaskManager</title>
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <%= stylesheet_link_tag href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" %>
+    <%= stylesheet_link_tag href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" %>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag src="https://kit.fontawesome.com/bcde4951cc.js" %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-   <link rel=“stylesheet” href=“https://use.fontawesome.com/releases/v5.0.10/css/all.css“>
   </head>
 
   <body>

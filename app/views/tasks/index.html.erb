@@ -1,17 +1,27 @@
-<h1>Tasks</h1>
+<div class="container">
 
-<% @tasks.each do |t| %>
+  <h1>Tasks</h1>
 
-<% if t.completed == false%>
-<i class="fas fa-square"></i>
-<% else %>
-<i class="fas fa-check-square"></i>
+  <% @tasks.each do |t| %>
+    <div class="d-flex align-items-center">
+      <%= link_to edit_path(t) do %>
+        <% if t.completed%>
+          <i class="fas fa-check-square"></i>
+        <% else %>
+          <i class="fas fa-square"></i>
+        <% end %>
+      <% end %>
+
+      <h3 class="title"><%= link_to t.title, task_path(t) %></h3>
+
+      <%= link_to destroy_path(t), method: :delete, data: { confirm: 'are you sure?'} do %>
+      <i class="fas fa-trash"></i>
+      <% end %>
+  </div>
+  <% end %>
+
+<%= link_to new_path do %>
+<p><i class="fas fa-plus"></i> New Task</p>
 <% end %>
 
-  <p><%= t.completed %></p>
-  <h3><%= link_to t.title, task_path(t) %>
-  <%= link_to 'edit', edit_path(t)  %>
-  <%= link_to 'delete', destroy_path(t), method: :delete, data: { confirm: 'are you sure?'} %>
-
-
-<% end %>
+</div>
